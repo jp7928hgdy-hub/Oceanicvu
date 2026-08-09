@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources — Oceanic Vu, LLC</title>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=2">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
+<link rel="shortcut icon" href="favicon-32.png?v=2">
+<meta name="description" content="Live oil spill trackers, tree planting initiatives, rainwater harvesting guides, and EV charger resources.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --deep: #0a3252;
+    --deep-2: #0c3f64;
+    --blue: #2b7eae;
+    --teal: #2c7348;
+    --leaf: #5c8a3a;
+    --foam: #f6f9f8;
+    --paper: #fbfbf9;
+    --ink: #0e2233;
+    --line: rgba(14,34,51,0.12);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 1.5;
+  }
+  h1,h2,h3{ font-family: 'Fraunces', serif; font-weight: 500; letter-spacing: -0.01em; }
+  a{color:inherit;}
+  img{display:block; max-width:100%;}
+  .wrap{ max-width: 1000px; margin: 0 auto; padding: 0 28px; }
+
+  header{
+    position: sticky; top:0; z-index: 50;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+  }
+  nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 14px 28px; max-width: 1160px; margin: 0 auto;
+  }
+  .brand{ display:flex; align-items:center; gap:10px; font-family:'Fraunces', serif; font-weight:600; font-size:1.05rem; text-decoration:none; }
+  .brand img{ height:34px; width:34px; }
+  .navlinks{ display:flex; gap: 30px; font-size: 0.92rem; }
+  .navlinks a{ text-decoration:none; opacity:0.75; transition: opacity .2s; }
+  .navlinks a:hover, .navlinks a.active{ opacity:1; }
+  a:focus-visible{ outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 3px; }
+
+  .page-hero{
+    padding: 76px 28px 56px;
+    background: radial-gradient(900px 460px at 12% 30px, rgba(43,126,174,0.12), transparent 55%);
+    text-align:center;
+    isolation: isolate;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  .page-hero .kicker{
+    font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; color: var(--blue); font-weight:600;
+  }
+  .page-hero h1{ font-size: clamp(2.1rem, 4vw, 2.9rem); margin-top:14px; color: var(--deep); }
+  .page-hero p{ margin-top: 16px; max-width: 56ch; margin-left:auto; margin-right:auto; color:#3d5164; font-size:1.05rem; }
+
+  .category{ padding: 56px 28px; }
+  .category + .category{ border-top: 1px solid var(--line); }
+  .category-head{ display:flex; align-items:center; gap:14px; margin-bottom: 30px; }
+  .category-icon{
+    width:48px; height:48px; border-radius:14px; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    background: #fff; border: 1px solid var(--line);
+    box-shadow: 0 8px 18px -10px rgba(10,50,82,0.2);
+  }
+  .category-icon svg{ width:24px; height:24px; }
+  .category-head h2{ font-size: 1.5rem; color: var(--deep); }
+  .category-note{ color:#5a6d7c; font-size:0.95rem; margin: -14px 0 26px 62px; max-width: 60ch; }
+
+  .link-list{ display:grid; gap: 14px; margin-left: 62px; }
+  .link-card{
+    display:block; text-decoration:none; padding: 18px 22px; border-radius: 14px;
+    background: var(--foam); border: 1px solid var(--line);
+    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  .link-card:hover{
+    transform: translateY(-1px); border-color: rgba(43,126,174,0.35);
+    box-shadow: 0 10px 22px -14px rgba(10,50,82,0.3);
+  }
+  .link-card .src{
+    font-size: 0.72rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; color: var(--blue);
+  }
+  .link-card h3{ font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:1.02rem; color: var(--deep); margin: 5px 0 6px; }
+  .link-card p{ font-size: 0.92rem; color:#4a5c6b; }
+
+  footer{ padding: 60px 28px 40px; border-top: 1px solid var(--line); margin-top: 20px; }
+  .footer-inner{ max-width: 1160px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
+  .footer-brand{ display:flex; align-items:center; gap:10px; font-family:'Fraunces',serif; font-weight:600; }
+  .footer-brand img{ height:28px; width:28px; }
+  footer .back{ font-size:0.9rem; text-decoration:none; color: var(--blue); font-weight:600; }
+
+  @media (max-width: 640px){
+    .category-note, .link-list{ margin-left: 0; }
+  }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="brand">
+      <img src="logo.png" alt="Oceanic Vu logo">
+      Oceanic Vu
+    </a>
+    <div class="navlinks">
+      <a href="index.html#causes">Causes</a>
+      <a href="resources.html" class="active">Resources</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="kicker">Resources &amp; Media</div>
+  <h1>Where to look, what to read, what to do</h1>
+  <p>Real tools and guides for the causes we care about — tracking spills as they happen, growing back what's been lost, catching the rain, and going electric.</p>
+</section>
+
+<section class="category" id="oceans">
+  <div class="wrap">
+    <div class="category-head">
+      <div class="category-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2b7eae" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15c1.5 1.5 3 1.5 4.5 0s3-1.5 4.5 0 3 1.5 4.5 0 3-1.5 4.5 0"/><path d="M2 19c1.5 1.5 3 1.5 4.5 0s3-1.5 4.5 0 3 1.5 4.5 0 3-1.5 4.5 0"/><path d="M12 3v8"/><path d="M9 6l3-3 3 3"/></svg>
+      </div>
+      <h2>Live oil slick map</h2>
+    </div>
+    <p class="category-note">Real satellite-detected oil slick data, pulled live from SkyTruth's Cerulean project. Click any marker for details.</p>
+    <div id="slick-map" style="height:440px;border-radius:14px;border:1px solid var(--line);margin-bottom:12px;background:var(--foam)"></div>
+    <p id="slick-status" style="font-size:0.85rem;color:#5a6d7c;margin-bottom:40px;">Loading live data…</p>
+    <div class="link-list">
+      <a class="link-card" href="https://incidentnews.noaa.gov/" target="_blank" rel="noopener">
+        <span class="src">NOAA — Office of Response and Restoration</span>
+        <h3>IncidentNews</h3>
+        <p>A running, government-maintained log of oil and chemical spill incidents across U.S. waters, updated as new events happen.</p>
+      </a>
+      <a class="link-card" href="https://skytruth.org/cerulean" target="_blank" rel="noopener">
+        <span class="src">SkyTruth</span>
+        <h3>Cerulean — Global Oil Slick Map</h3>
+        <p>A free, publicly viewable map that uses AI and daily satellite radar imagery to detect oil slicks anywhere in the ocean, worldwide.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="category" id="research">
+  <div class="wrap">
+    <div class="category-head">
+      <div class="category-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2b7eae" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      </div>
+      <h2>University oil spill research</h2>
+    </div>
+    <p class="category-note">Several major U.S. universities do active oil spill research and response work — including two right here in California.</p>
+    <div class="link-list">
+      <a class="link-card" href="https://www.usf.edu/marine-science/" target="_blank" rel="noopener">
+        <span class="src">USF College of Marine Science</span>
+        <h3>Oil Spill Research Program</h3>
+        <p>Home of C-IMAGE, a ten-year, $36.6 million research program studying the impact of oil spills on the Gulf of Mexico, alongside ongoing satellite monitoring and pollution studies.</p>
+      </a>
+      <a class="link-card" href="https://www.usf.edu/marine-science/news/2026/oil-spills-spiked-in-the-persian-gulf-during-the-iran-war-according-to-new-study.aspx" target="_blank" rel="noopener">
+        <span class="src">USF College of Marine Science</span>
+        <h3>Recent Study: Oil Spills Spiked in the Persian Gulf</h3>
+        <p>A 2026 study using satellite data found spill coverage roughly quadrupled amid regional conflict — a current example of USF's active spill-monitoring work.</p>
+      </a>
+      <a class="link-card" href="https://www.marine.usf.edu/oilspill/" target="_blank" rel="noopener">
+        <span class="src">USF College of Marine Science</span>
+        <h3>Oil Spill Information Archive</h3>
+        <p>USF's long-running archive of Deepwater Horizon-era research, news coverage, and findings from over a decade of Gulf oil spill science.</p>
+      </a>
+      <a class="link-card" href="https://scripps.ucsd.edu/news/uc-san-diego-works-mitigate-possible-oil-impacts-spill-huntington-beach" target="_blank" rel="noopener">
+        <span class="src">UC San Diego — Scripps Institution of Oceanography</span>
+        <h3>Real-Time Ocean Monitoring During Spill Response</h3>
+        <p>During the 2021 Huntington Beach spill, Scripps deployed sensor-equipped ocean robots and radar-based current tracking to feed real-time data to spill responders — based right here in Southern California.</p>
+      </a>
+      <a class="link-card" href="https://owcn.vetmed.ucdavis.edu/about" target="_blank" rel="noopener">
+        <span class="src">UC Davis — Oiled Wildlife Care Network</span>
+        <h3>Oiled Wildlife Care Network (OWCN)</h3>
+        <p>A UC Davis-managed statewide network that rescues and rehabilitates oil-affected wildlife across California, funding millions in research on treatment and long-term recovery since 1994.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="category" id="technology">
+  <div class="wrap">
+    <div class="category-head">
+      <div class="category-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2c7348" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8z"/></svg>
+      </div>
+      <h2>Real cleanup technology breakthroughs</h2>
+    </div>
+    <p class="category-note">Beyond traditional booms and skimmers, researchers have developed genuinely new materials and methods for pulling oil out of water.</p>
+    <div class="link-list">
+      <a class="link-card" href="https://energy.mit.edu/news/how-to-clean-up-oil-spills/" target="_blank" rel="noopener">
+        <span class="src">MIT</span>
+        <h3>Magnetic Nanoparticle Oil Separation</h3>
+        <p>MIT researchers developed a patented method that mixes water-repellent magnetic nanoparticles into spilled oil, then uses magnets to lift the oil cleanly out of the water — with the oil itself recoverable afterward.</p>
+      </a>
+      <a class="link-card" href="https://www.sciencedaily.com/releases/2020/05/200528160516.htm" target="_blank" rel="noopener">
+        <span class="src">Northwestern University</span>
+        <h3>Reusable "Smart Sponge"</h3>
+        <p>A porous sponge coated in an oil-attracting, water-repelling nanocomposite that absorbs over 30 times its own weight in oil and can be squeezed out and reused dozens of times.</p>
+      </a>
+    </div>
+  </div>
+</section>
+  <div class="wrap">
+    <div class="category-head">
+      <div class="category-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2c7348" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-7"/><path d="M12 15c-4 0-6-2.5-6-6 0-2 1-3.5 2.5-4.5C7.7 3 9.5 2 12 2s4.3 1 5.5 2.5C19 5.5 20 7 20 9c0 3.5-2 6-6 6z"/></svg>
+      </div>
+      <h2>Tree planting initiatives worth knowing about</h2>
+    </div>
+    <p class="category-note">A few of the larger, well-established reforestation efforts operating around the world right now — each one lets individuals get involved directly.</p>
+    <div class="link-list">
+      <a class="link-card" href="https://onetreeplanted.org" target="_blank" rel="noopener">
+        <span class="src">One Tree Planted</span>
+        <h3>One Tree Planted</h3>
+        <p>A nonprofit that plants trees across dozens of countries, funded largely through simple per-tree donations from individuals and companies.</p>
+      </a>
+      <a class="link-card" href="https://trees.org" target="_blank" rel="noopener">
+        <span class="src">Trees for the Future</span>
+        <h3>Trees for the Future</h3>
+        <p>Works directly with farming communities to rebuild degraded land through agroforestry, training, and long-term land planning.</p>
+      </a>
+      <a class="link-card" href="https://www.weforum.org/projects/1t-org/" target="_blank" rel="noopener">
+        <span class="src">World Economic Forum</span>
+        <h3>1t.org — Trillion Trees Initiative</h3>
+        <p>A global coalition tracking pledges from governments, companies, and organizations toward growing and restoring a trillion trees by 2030.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="category" id="rainwater">
+  <div class="wrap">
+    <div class="category-head">
+      <div class="category-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0a3252" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><path d="M5 10l7-4 7 4v6c0 4-3 8-7 8s-7-4-7-8v-6z"/><path d="M9 14l2 2 4-4"/></svg>
+      </div>
+      <h2>Collecting rainwater at home</h2>
+    </div>
+    <p class="category-note">Practical starting points for setting up a rain barrel or full catchment system — no special property or climate required.</p>
+    <div class="link-list">
+      <a class="link-card" href="https://www.familyhandyman.com/article/rainwater-harvesting/" target="_blank" rel="noopener">
+        <span class="src">Family Handyman</span>
+        <h3>Beginner's Guide to Rainwater Harvesting</h3>
+        <p>Covers the basic setup — gutters, storage tanks, and rain barrels — plus what harvested rainwater is and isn't safe to use for.</p>
+      </a>
+      <a class="link-card" href="https://agrilifetoday.tamu.edu/2020/08/19/rainwater-harvesting-tips-for-beginners/" target="_blank" rel="noopener">
+        <span class="src">Texas A&amp;M AgriLife</span>
+        <h3>Rainwater Harvesting Tips for Beginners</h3>
+        <p>A university extension guide on building a simple home rain barrel system, sizing it correctly, and avoiding common mistakes like mosquito buildup.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="category" id="energy">
+  <div class="wrap">
+    <div class="category-head">
+      <div class="category-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#5c8a3a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+      </div>
+      <h2>Going electric: chargers and EVs</h2>
+    </div>
+    <p class="category-note">From installing a charger at your own house to picking your first electric vehicle — current, practical guides.</p>
+    <div class="link-list">
+      <a class="link-card" href="https://www.angi.com/articles/installing-electric-car-charging-station.htm" target="_blank" rel="noopener">
+        <span class="src">Angi</span>
+        <h3>A Complete Guide to EV Charging Installation Costs</h3>
+        <p>Breaks down what a licensed electrician actually does during installation, what drives the price up or down, and what to ask before hiring one.</p>
+      </a>
+      <a class="link-card" href="https://cheapevcharger.com/ev-charging-guide" target="_blank" rel="noopener">
+        <span class="src">CheapEVCharger</span>
+        <h3>Home EV Charging Guide</h3>
+        <p>Explains the difference between charger levels and connector types in plain terms, so you know what to actually buy.</p>
+      </a>
+      <a class="link-card" href="https://recharged.com/articles/first-electric-car-buying-guide-2026" target="_blank" rel="noopener">
+        <span class="src">Recharged</span>
+        <h3>First Electric Car Buying Guide</h3>
+        <p>A step-by-step walkthrough for first-time EV shoppers — how to think about range, charging access, and new versus used.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="footer-brand">
+      <img src="logo.png" alt="Oceanic Vu logo">
+      Oceanic Vu, LLC
+    </a>
+    <a href="index.html" class="back">← Back to home</a>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function(){
+  const PROXY_URL = "https://cerulean-proxy.brianqtvu.workers.dev";
+  const statusEl = document.getElementById('slick-status');
+  const map = L.map('slick-map').setView([20, 0], 2);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '© OpenStreetMap, © CARTO', maxZoom: 10
+  }).addTo(map);
+
+  fetch(PROXY_URL + '/collections/public.slick_plus/items?limit=100')
+    .then(res => {
+      if (!res.ok) throw new Error('Server responded with ' + res.status);
+      return res.json();
+    })
+    .then(data => {
+      const features = data.features || [];
+      if (features.length === 0) {
+        statusEl.textContent = 'No active detections returned right now — check back later, or see the sources below.';
+        return;
+      }
+      let plotted = 0;
+      features.forEach(f => {
+        if (!f.geometry) return;
+        try {
+          const layer = L.geoJSON(f.geometry, {
+            style: { color: '#993C1D', fillColor: '#F0997B', fillOpacity: 0.65, weight: 1.5 },
+            pointToLayer: (feature, latlng) => L.circleMarker(latlng, { radius: 7, color: '#993C1D', fillColor: '#F0997B', fillOpacity: 0.8, weight: 1.5 })
+          }).addTo(map);
+          const props = f.properties || {};
+          let popupHtml = '<strong>Detected oil slick</strong><br>';
+          Object.keys(props).slice(0, 6).forEach(key => {
+            if (props[key] !== null && props[key] !== undefined && props[key] !== '') {
+              popupHtml += '<span style="color:#5a6d7c">' + key + ':</span> ' + props[key] + '<br>';
+            }
+          });
+          layer.bindPopup(popupHtml);
+          plotted++;
+        } catch(e) { /* skip malformed geometry */ }
+      });
+      statusEl.textContent = plotted > 0
+        ? plotted + ' detection(s) shown, via SkyTruth Cerulean.'
+        : 'Data connected, but no valid locations to plot right now.';
+    })
+    .catch(err => {
+      statusEl.textContent = 'Live map temporarily unavailable — see the sources below instead.';
+    });
+})();
+</script>
+</body>
+</html>
